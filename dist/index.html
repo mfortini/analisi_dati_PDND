@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Analisi report PDND | Analisi Dati PDND</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-cotton.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-cotton.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_npm/arquero@5.4.0/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/duckdb.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.14/_esm.js">
+<link rel="modulepreload" href="./_npm/@duckdb/duckdb-wasm@1.28.0/_esm.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/apache-arrow@16.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/acorn@8.12.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/tslib@2.6.3/_esm.js">
+<link rel="modulepreload" href="./_npm/flatbuffers@24.3.25/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+
+define({id: "9a087513", inputs: ["view","Inputs"], outputs: ["xlsxfile"], body: (view,Inputs) => {
+const xlsxfile = view(Inputs.file({label: "Excel file", accept: ".xlsx", required: true}));
+return {xlsxfile};
+}});
+
+define({id: "91922570", inputs: ["xlsxfile"], outputs: ["workbook"], body: (xlsxfile) => {
+const workbook = xlsxfile.xlsx();
+return {workbook};
+}});
+
+define({id: "3120967f", inputs: ["workbook"], outputs: ["agreements","descriptors","tokens"], body: (workbook) => {
+const agreements = workbook.sheet('Agreements', {headers:true});
+const descriptors = workbook.sheet('Descriptors', {headers:true});
+const tokens = workbook.sheet('Tokens', {headers:true});
+return {agreements,descriptors,tokens};
+}});
+
+define({id: "a68b9d4d", inputs: ["DuckDBClient","agreements","descriptors","tokens"], outputs: ["db"], body: (DuckDBClient,agreements,descriptors,tokens) => {
+const db = DuckDBClient.of({agreements: agreements, descriptors: descriptors, tokens:tokens});
+return {db};
+}});
+
+define({id: "4d3698f4", inputs: ["db"], outputs: ["count"], body: (db) => {
+const count = db.queryRow("SELECT COUNT (DISTINCT AgreementId) AS numagreements FROM agreements");
+return {count};
+}});
+
+define({id: "364ea75b", mode: "inline", inputs: ["count","display"], body: async (count,display) => {
+display(await(
+count["numagreements"]
+))
+}});
+
+define({id: "d1d702a3", body: () => {
+//Inputs.table(descriptors)
+}});
+
+define({id: "0ff9b81d", body: () => {
+//Inputs.table(tokens)
+}});
+
+define({id: "ba687ebc", inputs: ["aq","agreements","descriptors","tokens"], outputs: ["aqagreements","aqdescriptors","aqtokens"], body: (aq,agreements,descriptors,tokens) => {
+const aqagreements=aq.from(agreements);
+const aqdescriptors=aq.from(descriptors);
+const aqtokens=aq.from(tokens);
+return {aqagreements,aqdescriptors,aqtokens};
+}});
+
+define({id: "d6e730d8", mode: "inline", inputs: ["aqagreements","display"], body: async (aqagreements,display) => {
+display(await(
+aqagreements.numRows()
+))
+}});
+
+define({id: "1f401782", mode: "inline", inputs: ["aqagreements","display"], body: async (aqagreements,display) => {
+display(await(
+aqagreements.groupby('State').count().filter(d=>d.State == "Active").get("count")
+))
+}});
+
+define({id: "76c2a914", mode: "inline", inputs: ["aqdescriptors","display"], body: async (aqdescriptors,display) => {
+display(await(
+aqdescriptors.numRows()
+))
+}});
+
+define({id: "d9b531c5", mode: "inline", inputs: ["aqtokens","display"], body: async (aqtokens,display) => {
+display(await(
+aqtokens.numRows()
+))
+}});
+
+define({id: "5b2e77d2", mode: "inline", inputs: ["Inputs","aqagreements","display"], body: async (Inputs,aqagreements,display) => {
+display(await(
+Inputs.table(aqagreements.groupby('State').count())
+))
+}});
+
+define({id: "8389d115", inputs: ["db"], outputs: ["tot_token"], body: (db) => {
+const tot_token=db.query("SELECT date, SUM(CAST (tokencount AS INTEGER)) AS tot_token  FROM tokens WHERE date > '2024-01-01' GROUP BY date ORDER BY date");
+return {tot_token};
+}});
+
+define({id: "523a06d8", mode: "inline", inputs: ["Plot","tot_token","display"], body: async (Plot,tot_token,display) => {
+display(await(
+Plot.rectY(tot_token, {x:"date",y:"tot_token"}).plot()
+))
+}});
+
+</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div>
+<h1>Analisi report PDND</h1>
+<p>Scegli il file .xlsx con il report di produzione:</p>
+<div class="observablehq observablehq--block"><!--:9a087513:--></div>
+<div class="observablehq observablehq--block"><!--:91922570:--></div>
+<div class="observablehq observablehq--block"><!--:3120967f:--></div>
+<div class="observablehq observablehq--block"><!--:a68b9d4d:--></div>
+<div class="observablehq observablehq--block"><!--:4d3698f4:--></div>
+<p><observablehq-loading></observablehq-loading><!--:364ea75b:--></p>
+<div class="observablehq observablehq--block"><!--:d1d702a3:--></div>
+<div class="observablehq observablehq--block"><!--:0ff9b81d:--></div>
+<div class="observablehq observablehq--block"><!--:ba687ebc:--></div>
+<h2>Metriche di base</h2>
+<ul>
+<li>Ci sono:
+<ul>
+<li><observablehq-loading></observablehq-loading><!--:d6e730d8:--> agreement di cui <observablehq-loading></observablehq-loading><!--:1f401782:--> attivi</li>
+<li><observablehq-loading></observablehq-loading><!--:76c2a914:--> descriptor</li>
+<li><observablehq-loading></observablehq-loading><!--:d9b531c5:--> token</li>
+</ul>
+</li>
+</ul>
+<h3>Agreements</h3>
+<p><observablehq-loading></observablehq-loading><!--:5b2e77d2:--></p>
+<h2>Token</h2>
+<div class="observablehq observablehq--block"><!--:8389d115:--></div>
+<p><observablehq-loading></observablehq-loading><!--:523a06d8:--></p>
+</div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2024-06-20T18:40:11">Jun 20, 2024</a>.</div>
+</footer>
+</div>
